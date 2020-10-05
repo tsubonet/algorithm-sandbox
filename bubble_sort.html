@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // 挿入ソート
+  const bubbleSort = (array) => {
+    const length = array.length;
+
+    //調べる範囲の開始位置を1つずつ後ろへ移動
+    for (let i = 0; i < length; i++) {
+      //後ろから前に向かって小さい値を浮かび上がらせる
+      for (let j = length - 1; j > i; j--){
+        //隣りあう２つの値を比べて、後ろが小さければ交換する
+        if (array[j] < array[j - 1]) {
+          const tmp = array[j];
+          array[j] = array[j - 1];
+          array[j - 1] = tmp;
+        }
+      }
+    }
+    console.log(array);
+  }
+
+  const array = [3, 2, 5, 9, 1];
+
+  bubbleSort(array);
+  
+</script>
+</body>
+</html>
