@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<script>
+  // 挿入ソート
+  const insertionSort = (array) => {
+    const length = array.length;
+
+    for (let i = 0; i < length; i++) {
+
+      let j = i - 1;
+      let tmp = array[i];
+
+      while (j >= 0 && array[j] > tmp) {
+        // 適切な挿入位置まで整列済みの要素をずらす
+        array[j + 1] = array[j];
+        j--;
+      }
+
+      array[j + 1] = tmp;
+    }
+
+    console.log(array);
+  }
+
+  const array = [3, 2, 5, 9, 1];
+
+  insertionSort(array);
+  
+</script>
+</body>
+</html>
